@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home:Login</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <h1>Welcome, <%=fullname%></h1>
+    <h2>You have <%=book.length%> request</h2>
+
+    <table width="100%" border="1">
+
+      <tr>
+        <td>Student Name</td>
+        <td>Date</td>
+        <td>Time Slot</td>
+        <td>Approved</td>
+        <td>Cancel</td>
+      </tr>
+      <%for(var i=0; i<book.length; i++){%>
+
+        <tr>
+          <td><%=book[i].studentName%></td>
+          <td><%=book[i].timeslot%></td>
+          <td><%=book[i].date%></td>
+          <td><a href="confrim/<%=book[i]._id%>">Accpet</a></td>
+          <td><a href="">Reject</a></td>
+        </tr>
+
+      <%}%>
+
+
+
+    </table>
+
+  </body>
+</html>

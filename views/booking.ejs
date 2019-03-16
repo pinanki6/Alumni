@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        $( "#datepicker" ).datepicker({  maxDate: "-7D" });
+      } );
+      </script>
+
+  </head>
+  <body>
+    <h1>Book Now</h1>
+    <h3>Alumni Name: <%=data.fullname%></h3>
+
+
+    <form action="/book/" method="post">
+
+      <input type="hidden" value="<%=student_name%>" name="studentName">
+      <input type="hidden" value=<%=data._id%> name="alumni_id">
+      <input type="hidden" value=<%=student_id%> name="student_id">
+      <label for="timeslot">Time Slot</label>
+      <select id="timeslot" name="timeslot">
+        <%for(var i=0; i<data.timeSlot.length; i++){%>
+          <option value=<%=data.timeSlot[i].time%>><%=data.timeSlot[i].time%></option>
+        <%}%>
+      </select>
+      <label for="datepicker">Select</label>
+      <input type="text" name="date" value="" id="datepicker">
+      <input type="submit" value="book now">
+
+    </form>
+
+
+
+  </body>
+</html>

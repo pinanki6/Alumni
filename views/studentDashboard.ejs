@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
+    <h1>Hello, <%=username%></h1>
+    <h3><%=data.length%> are available</h3>
+    <hr>
+    <table width="100%" border="1">
+      <tr>
+        <td><b>Alumni Name</br></td>
+        <td><b>Book</br></td>
+      </tr>
+
+      <%for(var i=0; i<data.length; i++){%>
+        <tr>
+          <td><%=data[i].fullname%></td>
+          <td><a href=book/<%=data[i].id%>>Book Now</a></td>
+        </tr>
+      <%}%>
+    </table>
+
+    <hr>
+    <h2>Not Confrim</h2>
+
+    <table width="100%" border="1">
+      <tr>
+        <td><b>Alumni id</br></td>
+        <td><b>Book</br></td>
+        <td><b>Date</br></td>
+      </tr>
+
+      <%for(var i=0; i<book.length; i++){%>
+
+        <%if(book[i].status==false){%>
+
+        <tr>
+          <td><%=book[i].alumni_id%></td>
+          <td><%=book[i].timeslot%></td>
+          <td><%=book[i].date%></td>
+        </tr>
+        <%}%>
+      <%}%>
+    </table>
+
+    <h2>Confrimed</h2>
+    <table width="100%" border="1">
+      <tr>
+        <td><b>Alumni id</br></td>
+        <td><b>Book</br></td>
+        <td><b>Date</br></td>
+      </tr>
+
+      <%for(var i=0; i<book.length; i++){%>
+        <%if(book[i].status==true){%>
+        <tr>
+          <td><%=book[i].alumni_id%></td>
+          <td><%=book[i].timeslot%></td>
+          <td><%=book[i].date%></td>
+        </tr>
+        <%}%>
+      <%}%>
+    </table>
+
+  </body>
+</html>

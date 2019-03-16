@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home:Login</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+  </head>
+  <body>
+      <h1>Almuni Management Registration Portal</h1>
+      <div class="loginPortal">
+        <form method="post" action="../users/register" id="login">
+
+          <label for="fullname">Full Name</label>
+          <input type="text" name="fullname" id="fullname">
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+
+          <label for="password">Password</label>
+          <input type="password" name="password" id="passoword">
+
+          <label for="password">Member Type</label>
+          <select  name="memberType" id="memberType">
+            <option value="alumni">Alumni</option>
+            <option value="student">Student</option>
+          </select>
+
+          <input type="submit" value="Login">
+          </form>
+      </div>
+
+  </body>
+</html>
